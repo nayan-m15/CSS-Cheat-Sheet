@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Cheat Sheet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="cssLogo.svg" />
+
+</head>
+<body>
+    <script src="script.js"></script>
+    <header>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+            <span id="mode-icon">🌙</span>
+            <span id="mode-text">Dark Mode</span>
+        </button>
+        <h1>CSS Cheat Sheet</h1>
+    </header>
+
+    <main>
+        <nav>
+            <h2>Contents</h2>
+            <ul>
+                <li><a href="#box-model">Box Model</a></li>
+                <li><a href="#display">Display & Positioning</a></li>
+                <li><a href="#flexbox">Flexbox</a></li>
+                <li><a href="#grid">CSS Grid</a></li>
+                <li><a href="#typography">Typography</a></li>
+                <li><a href="#colors">Colors & Backgrounds</a></li>
+                <li><a href="#transitions">Transitions & Animations</a></li>
+                <li><a href="#selectors">Selectors & Pseudo-classes</a></li>
+                <li><a href="#responsive">Responsive Design</a></li>
+                <li><a href="#full-example">Full Example</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <form role="search">
+                <label for="search" style="display: none;">Search properties</label>
+                <input type="search" id="search" placeholder="Search properties..." aria-label="Search CSS properties">
+            </form>
+
+            <section id="box-model">
+                <h2>Box Model</h2>
+                <p>Control sizing, spacing, and borders of elements.</p>
+
+                <dl>
+                    <dt>width / height</dt>
+                    <dd>Sets the width or height of an element's content area.</dd>
+                    <pre><code>width: 300px;
+height: auto;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>margin</dt>
+                    <dd>Sets outer spacing around an element. Accepts 1-4 values for each side.</dd>
+                    <pre><code>margin: 20px 10px;
+/* top/bottom: 20px, left/right: 10px */</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>padding</dt>
+                    <dd>Sets inner spacing between content and border.</dd>
+                    <pre><code>padding: 1rem 2rem;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>border</dt>
+                    <dd>Shorthand for border-width, border-style, and border-color.</dd>
+                    <pre><code>border: 2px solid #667eea;
+border-radius: 8px;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>box-sizing</dt>
+                    <dd>Determines how width and height are calculated.</dd>
+                    <pre><code>box-sizing: border-box;
+/* includes padding and border in width */</code></pre>
+                </dl>
+            </section>
+
+            <section id="display">
+                <h2>Display & Positioning</h2>
+                <p>Control how elements are rendered and positioned.</p>
+
+                <dl>
+                    <dt>display</dt>
+                    <dd>Specifies the display behavior of an element.</dd>
+                    <pre><code>display: block;
+display: inline-block;
+display: flex;
+display: grid;
+display: none;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>position</dt>
+                    <dd>Sets how an element is positioned in the document.</dd>
+                    <pre><code>position: relative;
+position: absolute;
+position: fixed;
+position: sticky;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>top / right / bottom / left</dt>
+                    <dd>Specifies the position offset for positioned elements.</dd>
+                    <pre><code>top: 20px;
+left: 0;
+right: 0;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>z-index</dt>
+                    <dd>Controls stacking order of positioned elements.</dd>
+                    <pre><code>z-index: 100;</code></pre>
+                </dl>
+            </section>
+
+            <section id="flexbox">
+                <h2>Flexbox</h2>
+                <p>Create flexible, responsive layouts with ease.</p>
+
+                <h3>Container Properties</h3>
+                <dl>
+                    <dt>display: flex</dt>
+                    <dd>Defines a flex container.</dd>
+                    <pre><code>display: flex;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>flex-direction</dt>
+                    <dd>Defines the direction of flex items.</dd>
+                    <pre><code>flex-direction: row;
+flex-direction: column;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>justify-content</dt>
+                    <dd>Aligns items along the main axis.</dd>
+                    <pre><code>justify-content: center;
+justify-content: space-between;
+justify-content: space-around;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>align-items</dt>
+                    <dd>Aligns items along the cross axis.</dd>
+                    <pre><code>align-items: center;
+align-items: flex-start;
+align-items: stretch;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>gap</dt>
+                    <dd>Sets spacing between flex items.</dd>
+                    <pre><code>gap: 1rem;
+gap: 1rem 2rem; /* row-gap column-gap */</code></pre>
+                </dl>
+
+                <h3>Item Properties</h3>
+                <dl>
+                    <dt>flex</dt>
+                    <dd>Shorthand for flex-grow, flex-shrink, and flex-basis.</dd>
+                    <pre><code>flex: 1;
+flex: 0 1 auto;</code></pre>
+                </dl>
+            </section>
+
+            <section id="grid">
+                <h2>CSS Grid</h2>
+                <p>Create complex, two-dimensional layouts.</p>
+
+                <dl>
+                    <dt>display: grid</dt>
+                    <dd>Defines a grid container.</dd>
+                    <pre><code>display: grid;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>grid-template-columns / grid-template-rows</dt>
+                    <dd>Defines the columns and rows of the grid.</dd>
+                    <pre><code>grid-template-columns: 1fr 2fr 1fr;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: auto 200px auto;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>gap</dt>
+                    <dd>Sets spacing between grid items.</dd>
+                    <pre><code>gap: 2rem;
+grid-gap: 1rem 2rem;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>grid-column / grid-row</dt>
+                    <dd>Specifies a grid item's size and location.</dd>
+                    <pre><code>grid-column: 1 / 3;
+grid-row: 1 / span 2;</code></pre>
+                </dl>
+            </section>
+
+            <section id="typography">
+                <h2>Typography</h2>
+                <p>Style text and control font properties.</p>
+
+                <dl>
+                    <dt>font-family</dt>
+                    <dd>Specifies the font for text.</dd>
+                    <pre><code>font-family: 'Helvetica', Arial, sans-serif;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>font-size</dt>
+                    <dd>Sets the size of the font.</dd>
+                    <pre><code>font-size: 16px;
+font-size: 1.5rem;
+font-size: clamp(1rem, 2vw, 2rem);</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>font-weight</dt>
+                    <dd>Sets the weight (boldness) of the font.</dd>
+                    <pre><code>font-weight: 400;
+font-weight: bold;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>line-height</dt>
+                    <dd>Sets the height of a line box.</dd>
+                    <pre><code>line-height: 1.6;
+line-height: 24px;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>text-align</dt>
+                    <dd>Sets horizontal alignment of text.</dd>
+                    <pre><code>text-align: center;
+text-align: justify;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>letter-spacing / word-spacing</dt>
+                    <dd>Controls spacing between letters or words.</dd>
+                    <pre><code>letter-spacing: 0.05em;
+word-spacing: 0.2em;</code></pre>
+                </dl>
+            </section>
+
+            <section id="colors">
+                <h2>Colors & Backgrounds</h2>
+                <p>Apply colors, gradients, and background images.</p>
+
+                <dl>
+                    <dt>color</dt>
+                    <dd>Sets the text color.</dd>
+                    <pre><code>color: #667eea;
+color: rgb(102, 126, 234);
+color: hsl(230, 75%, 66%);</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>background</dt>
+                    <dd>Shorthand for all background properties.</dd>
+                    <pre><code>background: #f5f5f5;
+background: url('image.jpg') center/cover no-repeat;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>background-gradient</dt>
+                    <dd>Creates gradient backgrounds.</dd>
+                    <pre><code>background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+background: radial-gradient(circle, #fff, #000);</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>opacity</dt>
+                    <dd>Sets the transparency level.</dd>
+                    <pre><code>opacity: 0.8;</code></pre>
+                </dl>
+            </section>
+
+            <section id="transitions">
+                <h2>Transitions & Animations</h2>
+                <p>Add smooth transitions and keyframe animations.</p>
+
+                <dl>
+                    <dt>transition</dt>
+                    <dd>Shorthand for transition properties.</dd>
+                    <pre><code>transition: all 0.3s ease;
+transition: color 0.2s, transform 0.3s;</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>transform</dt>
+                    <dd>Applies 2D or 3D transformations.</dd>
+                    <pre><code>transform: rotate(45deg);
+transform: scale(1.2);
+transform: translate(10px, 20px);</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>animation</dt>
+                    <dd>Applies keyframe animations.</dd>
+                    <pre><code>animation: slide 2s ease-in-out infinite;
+
+@keyframes slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(100px); }
+}</code></pre>
+                </dl>
+            </section>
+
+            <section id="selectors">
+                <h2>Selectors & Pseudo-classes</h2>
+                <p>Target specific elements with precision.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Selector</th>
+                            <th>Example</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Element</td>
+                            <td><code>p</code></td>
+                            <td>Selects all paragraph elements</td>
+                        </tr>
+                        <tr>
+                            <td>Class</td>
+                            <td><code>.container</code></td>
+                            <td>Selects elements with class="container"</td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td><code>#header</code></td>
+                            <td>Selects element with id="header"</td>
+                        </tr>
+                        <tr>
+                            <td>Descendant</td>
+                            <td><code>article p</code></td>
+                            <td>Selects all p inside article</td>
+                        </tr>
+                        <tr>
+                            <td>Child</td>
+                            <td><code>ul > li</code></td>
+                            <td>Selects direct li children of ul</td>
+                        </tr>
+                        <tr>
+                            <td>:hover</td>
+                            <td><code>a:hover</code></td>
+                            <td>Selects links on mouse hover</td>
+                        </tr>
+                        <tr>
+                            <td>:first-child</td>
+                            <td><code>li:first-child</code></td>
+                            <td>Selects first li element</td>
+                        </tr>
+                        <tr>
+                            <td>:nth-child(n)</td>
+                            <td><code>tr:nth-child(even)</code></td>
+                            <td>Selects even numbered rows</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="responsive">
+                <h2>Responsive Design</h2>
+                <p>Create layouts that adapt to different screen sizes.</p>
+
+                <dl>
+                    <dt>@media</dt>
+                    <dd>Defines media queries for responsive design.</dd>
+                    <pre><code>@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+  }
+}</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>clamp()</dt>
+                    <dd>Sets a value that scales between a minimum and maximum.</dd>
+                    <pre><code>font-size: clamp(1rem, 2.5vw, 2rem);</code></pre>
+                </dl>
+
+                <dl>
+                    <dt>Viewport units</dt>
+                    <dd>Sizes relative to the viewport.</dd>
+                    <pre><code>width: 100vw;  /* viewport width */
+height: 100vh; /* viewport height */
+font-size: 5vmin; /* viewport minimum */</code></pre>
+                </dl>
+            </section>
+
+            <section id="full-example">
+                <h2>Full Example: This Website's CSS</h2>
+                <p>Here's the complete CSS used to style this cheat sheet. A real-world example demonstrating box model, flexbox, grid, typography, colors, transitions, and responsive design all working together.</p>
+
+                <pre><code>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+}
+
+header {
+    background: rgba(140, 190, 255, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    padding: 2rem 2rem;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.4) 0%, rgba(118, 75, 162, 0.4) 100%);
+    z-index: -1;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.95;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+nav {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    height: fit-content;
+    position: sticky;
+    top: 7rem;
+    z-index: 100;
+}
+
+nav h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #667eea;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 0.5rem;
+}
+
+nav a {
+    color: #555;
+    text-decoration: none;
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.15));
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+nav a:hover {
+    color: #667eea;
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+nav a:hover::before {
+    left: 0;
+}
+
+nav a:active {
+    transform: translateX(6px) scale(0.98);
+}
+
+article {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+section:last-child {
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #667eea;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: #667eea;
+    margin: 2rem 0 1rem;
+}
+
+section > p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+dl {
+    background: #fafafa;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #667eea;
+}
+
+dt {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: #e83e8c;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+dd {
+    color: #555;
+    margin-bottom: 1rem;
+    margin-left: 0;
+}
+
+pre {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 1.5rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 1rem 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+code {
+    color: #e83e8c;
+    background: #f7f7f7;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+pre code {
+    color: #e2e8f0;
+    background: transparent;
+    padding: 0;
+}
+
+footer {
+    background: #2d3748;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    opacity: 0.8;
+}
+
+@media (max-width: 968px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        position: static;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Search box styling */
+form {
+    margin-bottom: 2rem;
+}
+
+input[type="search"] {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="search"]:focus {
+    border-color: #667eea;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: white;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background: #667eea;
+    color: white;
+    font-weight: 600;
+}
+
+tr:hover {
+    background: #f7fafc;
+}</code></pre>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>CSS Cheat Sheet  | &copy; 2026 | Built with semantic HTML</p>
+    </footer>
+    
+   
+</body>
+</html>
