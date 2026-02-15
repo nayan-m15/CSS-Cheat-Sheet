@@ -109,16 +109,21 @@
 
         nav {
             background: white;
-            padding: 1.5rem;
+            padding: 0.5rem;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            height: fit-content;
+
             position: sticky;
             top: 7rem;
             z-index: 100;
+
+            max-height: calc(100vh - 7rem); 
+            overflow-y: auto; 
+            
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
         
+
         body.dark-mode nav {
             background: #2d3748;
             box-shadow: 0 2px 8px rgba(0,0,0,0.3);
