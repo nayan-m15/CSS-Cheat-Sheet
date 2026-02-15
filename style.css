@@ -197,6 +197,16 @@
             transform: translateX(6px) scale(0.98);
         }
 
+        .download-btn{
+            display: inline-block;
+            text-transform: uppercase;
+            background-color: black;
+            color: white;
+
+        }
+
+        
+
         article {
             background: white;
             padding: 2rem;
