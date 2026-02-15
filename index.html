@@ -688,6 +688,111 @@ tr:hover {
     background: #f7fafc;
 }</code></pre>
             </section>
+
+            <section id="Example 2 with explanations">
+                <h2>Example 2: Basic styles.css</h2>
+                <p>Here's the complete CSS used to style a blog plage to learn from. A real-world example demonstrating typography, colors, transitions, and responsive design all working together.</p>
+
+                <pre><code>
+//* is for the whole webpage
+* {
+  border: 1px solid red;
+}
+
+//For the all paragraphs
+p {
+  color: green;
+}
+
+// for all h1 headers
+h1 {
+  color: maroon;
+}
+
+//the . is to indicate the style of a specific class
+.title {
+  color: teal;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+//# is to indicate the style of an id 
+#article-title {
+  font-family: cursive;
+}
+
+//a[href*=''] is for a specific href value 
+a[href*='florence'] {
+  color: lightgreen;
+}
+
+a[href*='beijing'] {
+  color: lightblue;
+}
+
+a[href*='seoul'] {
+  color: lightpink;
+}
+
+//hover is to change the color or behavior of something on hover.
+a:hover {
+  color:darkorange;
+}
+
+//changing the background of an element with class heading-background
+.heading-background {
+  background-color: aqua;
+}
+
+//changing the color of an element with id publish-time
+#publish-time {
+  color: lightgray;
+}
+
+h5 {
+  color: yellow;
+}
+
+.author-class {
+  color: pink;
+}
+
+#author-id {
+  color: cornflowerblue;
+}
+
+//if an element has an h value, an id and a class. The id will override the class and the class will override the h value. 
+
+//this is to modify a specific header with the class destination. **Note - doesn't change all h2 values. 
+h2.destination {
+  font-family: Tahoma;
+}
+
+//Changes the value of the h5 that is a descendant of the description class.
+.description h5 {
+  color: blueviolet;
+}
+
+//changing the value of nested elements using a space. The h4 is nested within the li. 
+li h4 {
+  color: gold;
+}
+
+h4 {
+  color: dodgerblue;
+}
+
+//Unrelated selectors can be seperated by commas and receive the same style. 
+li,
+h5 {
+  font-family: monospace;
+}
+
+
+                </code></pre>
+            </section>
         </article>
     </main>
 
